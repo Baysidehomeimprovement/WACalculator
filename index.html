@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Free cost calculators for kitchen remodeling, bathroom renovation, and home additions from Bayside Home Improvement - get instant estimates for your project.">
+    <title>Bayside Home Improvement - Free Remodeling Cost Calculators</title>
+    <link rel="icon" href="companylogo.png" type="image/png">
+        <style>
+        /* Base Styles for Index Page */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centers content vertically */
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .company-name {
+            color: #FCD798;
+            font-size: 2.7rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .page-title {
+            color: #ffffff;
+            font-size: 1.7rem;
+            font-weight: bold;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .calculator-card {
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .calculator-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .calculator-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .kitchen-bg {
+            background-image: url('/kitchenbackground.webp');
+        }
+
+        .bathroom-bg {
+            background-image: url('/bathroombackground.jpeg');
+        }
+
+        .additions-bg {
+            background-image: url('/additionbackground.jpeg');
+        }
+
+        .calculator-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .calculator-card:hover .calculator-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .calculator-title {
+            color: #FCD798;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .calculator-description {
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .calculator-button {
+            background-color: #FCD798;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .calculator-button:hover {
+            background-color: #e0bb7a;
+        }
+
+        .background-image-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('/remodelbackground.jpeg'); /* Default background */
+        }
+
+        .background-overlay {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .company-name {
+                font-size: 2rem;
+            }
+            
+            .page-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image-container"></div>
+    <div class="background-overlay"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="company-name">BAYSIDE HOME IMPROVEMENT</div>
+            <div class="page-title">COST CALCULATORS</div>
+        </div>
+        
+        <div class="calculator-grid">
+            <!-- Kitchen Calculator Card -->
+            <div class="calculator-card" onclick="window.location.href='kitchen'">
+                <div class="calculator-background kitchen-bg"></div>
+                <div class="calculator-overlay">
+                    <h3 class="calculator-title">KITCHEN COST CALCULATOR</h3>
+                    <p class="calculator-description">Get an instant estimate for your kitchen remodeling project based on your preferences and requirements.</p>
+                    <button class="calculator-button">START</button>
+                </div>
+            </div>
+            
+            <!-- Bathroom Calculator Card -->
+            <div class="calculator-card" onclick="window.location.href='bathroom'">
+                <div class="calculator-background bathroom-bg"></div>
+                <div class="calculator-overlay">
+                    <h3 class="calculator-title">BATHROOM COST CALCULATOR</h3>
+                    <p class="calculator-description">Calculate the cost of your bathroom renovation with our interactive estimator.</p>
+                    <button class="calculator-button">START</button>
+                </div>
+            </div>
+            
+            <!-- Home Additions Calculator Card -->
+            <div class="calculator-card" onclick="window.location.href='home-additions'">
+                <div class="calculator-background additions-bg"></div>
+                <div class="calculator-overlay">
+                    <h3 class="calculator-title">HOME ADDITIONS CALCULATOR</h3>
+                    <p class="calculator-description">Plan your home expansion project and get a cost estimate tailored to your needs.</p>
+                    <button class="calculator-button">START</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add animation or interaction effects
+        document.querySelectorAll('.calculator-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.querySelector('.calculator-button').style.transform = 'scale(1.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.querySelector('.calculator-button').style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

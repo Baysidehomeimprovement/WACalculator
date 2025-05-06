@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free kitchen cost calculator from Bayside Home Improvement - get instant estimates for your project.">
+    <title>Bayside Home Improvement - Kitchen Cost Calculator</title>
+    <link rel="icon" href="companylogo.png" type="image/png">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="kitchen-calculator">
+    <div class="background-image-container"></div>
+    <div class="background-overlay"></div>
+    <div class="header">
+        <div class="company-name">BAYSIDE HOME IMPROVEMENT</div>
+        <div class="calculator-title">KITCHEN COST CALCULATOR</div>
+    </div>
+    
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar" style="width: 6.25%;"></div>
+    </div>
+
+    <!-- Step 1: Do you own your home? -->
+    <div class="calculator-card" id="step-1">
+        <div class="calculator-content">
+            <div class="question">Do you own your home? *</div>
+            <div class="options">
+                <div class="radio-option">
+                    <input type="radio" id="own-yes" name="own-home" value="yes">
+                    <label for="own-yes">Yes</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="own-no" name="own-home" value="no">
+                    <label for="own-no">No</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <div style="width: 80px;"></div> <!-- Empty div for spacing -->
+            <button class="next-button" id="step1-next">NEXT</button>
+        </div>
+    </div>
+    <!-- Step 2: Total Area -->
+    <div class="calculator-card hidden" id="step-2">
+        <div class="calculator-content">
+            <div class="question">Total Area Sq.Ft *</div>
+            <div class="options">
+                <div class="radio-option">
+                    <input type="radio" id="area-small" name="area" value="50">
+                    <label for="area-small">50 Square Feet (Small)</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="area-average" name="area" value="100" checked>
+                    <label for="area-average">100 Square Feet (Average)</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="area-large" name="area" value="150">
+                    <label for="area-large">150 Square Feet (Large)</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step2-prev">PREV</button>
+            <button class="next-button" id="step2-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- Step 3: Kitchen Design -->
+    <div class="calculator-card hidden" id="step-3">
+        <div class="calculator-content">
+            <div class="question">Do you need a Kitchen Design? *</div>
+            <div class="options">
+                <div class="radio-option">
+                    <input type="radio" id="design-yes" name="kitchen-design" value="yes">
+                    <label for="design-yes">Yes</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="design-no" name="kitchen-design" value="no">
+                    <label for="design-no">No</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step3-prev">PREV</button>
+            <button class="next-button" id="step3-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- Step 4: Kitchen Style -->
+    <div class="calculator-card hidden" id="step-4">
+        <div class="calculator-content">
+            <div class="question">Kitchen Style *</div>
+            <div class="options">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="style-modern" name="kitchen-style" value="Modern">
+                    <label for="style-modern">Modern</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="style-traditional" name="kitchen-style" value="Traditional">
+                    <label for="style-traditional">Traditional</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="style-craftsman" name="kitchen-style" value="Craftsman">
+                    <label for="style-craftsman">Craftsman</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="style-industrial" name="kitchen-style" value="Industrial">
+                    <label for="style-industrial">Industrial</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="style-simple" name="kitchen-style" value="Simple">
+                    <label for="style-simple">Simple</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step4-prev">PREV</button>
+            <button class="next-button" id="step4-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- Step 5: Demolition -->
+    <div class="calculator-card hidden" id="step-5">
+        <div class="calculator-content">
+            <div class="question">Demolition and Waste Removal *</div>
+            <div class="options">
+                <div class="radio-option">
+                    <input type="radio" id="demo-full" name="demolition" value="Full Kitchen Demolition">
+                    <label for="demo-full">Full Kitchen Demolition</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="demo-partial" name="demolition" value="Partial Kitchen Demolition">
+                    <label for="demo-partial">Partial Kitchen Demolition</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="demo-wall" name="demolition" value="Removal of load bearing Wall + Full Demolition">
+                    <label for="demo-wall">Removal of load bearing Wall + Full Demolition</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="demo-none" name="demolition" value="None or Very Little">
+                    <label for="demo-none">None or Very Little</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step5-prev">PREV</button>
+            <button class="next-button" id="step5-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- Step 6: Lighting -->
+    <div class="calculator-card hidden" id="step-6">
+        <div class="calculator-content">
+            <div class="question"># of Pot Lights + Electrical Fixtures *</div>
+            <div class="options">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="light-island" name="lighting" value="Island Pendants">
+                    <label for="light-island">Island Pendants</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="light-pot-1-4" name="lighting" value="1-4 Pot Lights">
+                    <label for="light-pot-1-4">1-4 Pot Lights</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="light-pot-5-10" name="lighting" value="5-10 Pot Lights">
+                    <label for="light-pot-5-10">5-10 Pot Lights</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="light-cabinet" name="lighting" value="Under Cabinet Lighting">
+                    <label for="light-cabinet">Under Cabinet Lighting</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="light-electrical" name="lighting" value="Add Electrical Roughin for more appliances">
+                    <label for="light-electrical">Add Electrical Roughin for more appliances</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="light-none" name="lighting" value="No Electrical Work or very little">
+                    <label for="light-none">No Electrical Work or very little</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step6-prev">PREV</button>
+            <button class="next-button" id="step6-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- Step 7: Flooring -->
+    <div class="calculator-card hidden" id="step-7">
+        <div class="calculator-content">
+            <div class="question">Select Flooring *</div>
+            <div class="options">
+                <div class="radio-option">
+                    <input type="radio" id="floor-ceramic" name="flooring" value="Ceramic / Porcelain Tiles">
+                    <label for="floor-ceramic">Ceramic / Porcelain Tiles</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="floor-vinyl" name="flooring" value="Vinyl Flooring">
+                    <label for="floor-vinyl">Vinyl Flooring</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="floor-hardwood" name="flooring" value="Hardwood">
+                    <label for="floor-hardwood">Hardwood</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="floor-none" name="flooring" value="No Flooring but include floor protection for existing floor">
+                    <label for="floor-none">No Flooring but include floor protection for existing floor</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step7-prev">PREV</button>
+            <button class="next-button" id="step7-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- Step 8: Sink -->
+    <div class="calculator-card hidden" id="step-8">
+        <div class="calculator-content">
+            <div class="question">Select Sink *</div>
+            <div class="options">
+                <div class="radio-option">
+                    <input type="radio" id="sink-high" name="sink" value="High Quality Fittings-Kohler, American Standard">
+                    <label for="sink-high">High Quality Fittings-Kohler, American Standard</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="sink-medium" name="sink" value="Medium Quality">
+                    <label for="sink-medium">Medium Quality</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="sink-builder" name="sink" value="Builder Grade">
+                    <label for="sink-builder">Builder Grade</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step8-prev">PREV</button>
+            <button class="next-button" id="step8-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- Step 9: Faucet -->
+    <div class="calculator-card hidden" id="step-9">
+        <div class="calculator-content">
+            <div class="question">Select Faucet *</div>
+            <div class="options">
+                <div class="radio-option">
+                    <input type="radio" id="faucet-high" name="faucet" value="High Quality">
+                    <label for="faucet-high">High Quality</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="faucet-medium" name="faucet" value="Medium Quality">
+                    <label for="faucet-medium">Medium Quality</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="faucet-builder" name="faucet" value="Builder Grade">
+                    <label for="faucet-builder">Builder Grade</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step9-prev">PREV</button>
+            <button class="next-button" id="step9-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- Step 10: Cabinets -->
+    <div class="calculator-card hidden" id="step-10">
+        <div class="calculator-content">
+            <div class="question">Select Cabinets *</div>
+            <div class="options">
+                <div class="radio-option">
+                    <input type="radio" id="cabinets-high" name="cabinets" value="High Quality">
+                    <label for="cabinets-high">High Quality</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="cabinets-mid" name="cabinets" value="Mid Quality">
+                    <label for="cabinets-mid">Mid Quality</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="cabinets-builder" name="cabinets" value="Builder Grade">
+                    <label for="cabinets-builder">Builder Grade</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step10-prev">PREV</button>
+            <button class="next-button" id="step10-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- Step 11: Countertop -->
+    <div class="calculator-card hidden" id="step-11">
+        <div class="calculator-content">
+            <div class="question">Select Counter-top *</div>
+            <div class="options">
+                <div class="radio-option">
+                    <input type="radio" id="counter-quartz" name="countertop" value="Quartz - High Quality">
+                    <label for="counter-quartz">Quartz - High Quality</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="counter-granite" name="countertop" value="Granite - High Quality">
+                    <label for="counter-granite">Granite - High Quality</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="counter-builder" name="countertop" value="Builder Grade">
+                    <label for="counter-builder">Builder Grade</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step11-prev">PREV</button>
+            <button class="next-button" id="step11-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- Step 12: Features -->
+    <div class="calculator-card hidden" id="step-12">
+        <div class="calculator-content">
+            <div class="question">Features *</div>
+            <div class="options">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="feature-window" name="features" value="Add A Window">
+                    <label for="feature-window">Add A Window</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="feature-pot" name="features" value="Pot Filler">
+                    <label for="feature-pot">Pot Filler</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="feature-island" name="features" value="Add an Island">
+                    <label for="feature-island">Add an Island</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="feature-crown" name="features" value="Crown Moulding">
+                    <label for="feature-crown">Crown Moulding</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="feature-splash" name="features" value="Back Splash">
+                    <label for="feature-splash">Back Splash</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="feature-glass" name="features" value="Glass Doors for Cabinets">
+                    <label for="feature-glass">Glass Doors for Cabinets</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="feature-none" name="features" value="No Features Required">
+                    <label for="feature-none">No Features Required</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step12-prev">PREV</button>
+            <button class="next-button" id="step12-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- Step 13: Drywall -->
+    <div class="calculator-card hidden" id="step-13">
+        <div class="calculator-content">
+            <div class="question">Select Internal Drywall *</div>
+            <div class="options">
+                <div class="radio-option">
+                    <input type="radio" id="drywall-all" name="drywall" value="All new drywall">
+                    <label for="drywall-all">All new drywall</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="drywall-some" name="drywall" value="Only some drywall needed">
+                    <label for="drywall-some">Only some drywall needed</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="drywall-minor" name="drywall" value="Only minor drywall patching required">
+                    <label for="drywall-minor">Only minor drywall patching required</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step13-prev">PREV</button>
+            <button class="next-button" id="step13-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- Step 14: Painting -->
+    <div class="calculator-card hidden" id="step-14">
+        <div class="calculator-content">
+            <div class="question">Painting *</div>
+            <div class="options">
+                <div class="radio-option">
+                    <input type="radio" id="paint-full" name="painting" value="Full Paint Required">
+                    <label for="paint-full">Full Paint Required</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="paint-2walls" name="painting" value="Only 2 walls Required">
+                    <label for="paint-2walls">Only 2 walls Required</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="paint-1wall" name="painting" value="Only 1 wall Required">
+                    <label for="paint-1wall">Only 1 wall Required</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="paint-3walls" name="painting" value="Only 3 walls are required">
+                    <label for="paint-3walls">Only 3 walls are required</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="paint-customer" name="painting" value="Customer to Paint">
+                    <label for="paint-customer">Customer to Paint</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step14-prev">PREV</button>
+            <button class="next-button" id="step14-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- Step 15: Appliances -->
+    <div class="calculator-card hidden" id="step-15">
+        <div class="calculator-content">
+            <div class="question">Appliances *</div>
+            <div class="options">
+                <div class="radio-option">
+                    <input type="radio" id="appliances-high" name="appliances" value="High Quality">
+                    <label for="appliances-high">High Quality</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="appliances-medium" name="appliances" value="Medium Quality">
+                    <label for="appliances-medium">Medium Quality</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="appliances-builder" name="appliances" value="Builder Grade">
+                    <label for="appliances-builder">Builder Grade</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="appliances-reuse" name="appliances" value="Remove and Reuse my existing appliances">
+                    <label for="appliances-reuse">Remove and Reuse my existing appliances</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step15-prev">PREV</button>
+            <button class="next-button" id="step15-next">NEXT</button>
+        </div>
+    </div>
+
+    <!-- Design Consultation Question -->
+    <div class="calculator-card hidden" id="step-16">
+        <div class="calculator-content">
+            <div class="question">Would you like a free design consultation from one of our Designers? *</div>
+            <div class="options">
+                <div class="radio-option">
+                    <input type="radio" id="consultation-yes" name="consultation" value="yes" checked>
+                    <label for="consultation-yes">Yes</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="consultation-no" name="consultation" value="no">
+                    <label for="consultation-no">No</label>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="prev-button" id="step16-prev">PREV</button>
+            <button class="next-button" id="step16-next">NEXT</button>
+        </div>
+    </div>
+ <!-- Contact Form (Final Step) -->
+ <div class="calculator-card hidden" id="step-17">
+    <div class="calculator-content">
+        <div class="question" style="font-size: 1.8rem; line-height: 1.3; margin-bottom: 30px;">Your Estimate is Ready. Submit Your Details Below To Get Your Free Kitchen Estimate and Concept Design</div>
+        
+        <form action="https://formsubmit.co/sales@baysidehi.net" method="POST">
+            <!-- Form honeypot to prevent spam -->
+            <input type="text" name="_honey" style="display:none">
+            
+            <!-- Disable captcha -->
+            <input type="hidden" name="_captcha" value="false">
+            
+            <!-- Subject line of the email -->
+            <input type="hidden" name="_subject" value="Kitchen Calculator Lead">
+            
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" id="zipcode" name="zipcode" placeholder="Zip Code" required>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px; padding-bottom: 20px;">
+                <a href="#" style="color: #007bff; text-decoration: none; margin-right: 15px;">Privacy Policy</a> | 
+                <a href="#" style="color: #007bff; text-decoration: none; margin-left: 15px;">Terms of Service</a>
+            </div>
+            
+            <div class="button-container" style="background-color: transparent; padding: 15px 0;">
+                <button type="button" class="prev-button" id="step17-prev" style="color: #FCD798;">PREV</button>
+                <button type="submit" class="next-button" style="background-color: #FCD798; padding: 12px 30px; color: white; border-radius: 5px;">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- Results/Estimate Page -->
+<div class="calculator-card hidden" id="results-page">
+    <div class="calculator-content">
+        <div class="question" style="font-size: 1.8rem; line-height: 1.3; margin-bottom: 20px;">Your Kitchen Remodel Estimate</div>
+        
+        <p style="font-size: 1.2rem; margin-bottom: 15px;">Based on your selections, your kitchen remodel estimate is:</p>
+        
+        <div style="text-align: center; margin: 30px 0; padding: 20px; background-color: #f5f9ff; border-radius: 8px;">
+            <span style="font-size: 2rem; font-weight: bold; color: #FCD798;">$30,000 - $100,000</span>
+        </div>
+        
+        <p style="margin-bottom: 20px;">This estimate is based on the information you provided and may vary depending on specific design choices, materials, and unforeseen conditions.</p>
+        
+        <p style="font-weight: bold; margin-bottom: 20px;">Ready to take the next step?</p>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <p style="font-size: 1.3rem; margin-bottom: 15px;">Call us today to schedule your free in-home consultation:</p>
+            <a href="tel:+15555555555" style="display: inline-block; background-color: #FCD798; color: white; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.2rem;">(555) 555-5555</a>
+        </div>
+    </div>
+</div>
+    <script>
+        // Initialize with direct event listeners for the first 8 steps
+        
+        // Step 1
+        document.getElementById('step1-next').addEventListener('click', function() {
+            if (!document.querySelector('input[name="own-home"]:checked')) {
+                alert('Please select whether you own your home.');
+                return;
+            }
+            document.getElementById('step-1').classList.add('hidden');
+            document.getElementById('step-2').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '12.5%';
+        });
+
+        // Step 2
+        document.getElementById('step2-prev').addEventListener('click', function() {
+            document.getElementById('step-2').classList.add('hidden');
+            document.getElementById('step-1').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '6.25%';
+        });
+
+        document.getElementById('step2-next').addEventListener('click', function() {
+            if (!document.querySelector('input[name="area"]:checked')) {
+                alert('Please select a total area.');
+                return;
+            }
+            document.getElementById('step-2').classList.add('hidden');
+            document.getElementById('step-3').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '18.75%';
+        });
+
+        // Step 3
+        document.getElementById('step3-prev').addEventListener('click', function() {
+            document.getElementById('step-3').classList.add('hidden');
+            document.getElementById('step-2').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '12.5%';
+        });
+
+        document.getElementById('step3-next').addEventListener('click', function() {
+            if (!document.querySelector('input[name="kitchen-design"]:checked')) {
+                alert('Please select whether you need a kitchen design.');
+                return;
+            }
+            document.getElementById('step-3').classList.add('hidden');
+            document.getElementById('step-4').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '25%';
+        });
+
+        // Step 4
+        document.getElementById('step4-prev').addEventListener('click', function() {
+            document.getElementById('step-4').classList.add('hidden');
+            document.getElementById('step-3').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '18.75%';
+        });
+
+        document.getElementById('step4-next').addEventListener('click', function() {
+            // Checkbox validation is not required, any combination is acceptable
+            document.getElementById('step-4').classList.add('hidden');
+            document.getElementById('step-5').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '31.25%';
+        });
+
+        // Step 5
+        document.getElementById('step5-prev').addEventListener('click', function() {
+            document.getElementById('step-5').classList.add('hidden');
+            document.getElementById('step-4').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '25%';
+        });
+
+        document.getElementById('step5-next').addEventListener('click', function() {
+            if (!document.querySelector('input[name="demolition"]:checked')) {
+                alert('Please select a demolition option.');
+                return;
+            }
+            document.getElementById('step-5').classList.add('hidden');
+            document.getElementById('step-6').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '37.5%';
+        });
+
+        // Step 6
+        document.getElementById('step6-prev').addEventListener('click', function() {
+            document.getElementById('step-6').classList.add('hidden');
+            document.getElementById('step-5').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '31.25%';
+        });
+
+        document.getElementById('step6-next').addEventListener('click', function() {
+            // Checkbox validation is not required, any combination is acceptable
+            document.getElementById('step-6').classList.add('hidden');
+            document.getElementById('step-7').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '43.75%';
+        });
+
+        // Step 7
+        document.getElementById('step7-prev').addEventListener('click', function() {
+            document.getElementById('step-7').classList.add('hidden');
+            document.getElementById('step-6').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '37.5%';
+        });
+
+        document.getElementById('step7-next').addEventListener('click', function() {
+            if (!document.querySelector('input[name="flooring"]:checked')) {
+                alert('Please select a flooring option.');
+                return;
+            }
+            document.getElementById('step-7').classList.add('hidden');
+            document.getElementById('step-8').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '50%';
+        });
+
+        // Step 8
+        document.getElementById('step8-prev').addEventListener('click', function() {
+            document.getElementById('step-8').classList.add('hidden');
+            document.getElementById('step-7').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '43.75%';
+        });
+
+        document.getElementById('step8-next').addEventListener('click', function() {
+            if (!document.querySelector('input[name="sink"]:checked')) {
+                alert('Please select a sink option.');
+                return;
+            }
+            document.getElementById('step-8').classList.add('hidden');
+            document.getElementById('step-9').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '56.25%';
+        });
+
+        // Step 9
+        document.getElementById('step9-prev').addEventListener('click', function() {
+            document.getElementById('step-9').classList.add('hidden');
+            document.getElementById('step-8').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '50%';
+        });
+
+        document.getElementById('step9-next').addEventListener('click', function() {
+            if (!document.querySelector('input[name="faucet"]:checked')) {
+                alert('Please select a faucet option.');
+                return;
+            }
+            document.getElementById('step-9').classList.add('hidden');
+            document.getElementById('step-10').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '62.5%';
+        });
+
+        // Step 10
+        document.getElementById('step10-prev').addEventListener('click', function() {
+            document.getElementById('step-10').classList.add('hidden');
+            document.getElementById('step-9').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '56.25%';
+        });
+
+        document.getElementById('step10-next').addEventListener('click', function() {
+            if (!document.querySelector('input[name="cabinets"]:checked')) {
+                alert('Please select a cabinet option.');
+                return;
+            }
+            document.getElementById('step-10').classList.add('hidden');
+            document.getElementById('step-11').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '68.75%';
+        });
+
+        // Step 11
+        document.getElementById('step11-prev').addEventListener('click', function() {
+            document.getElementById('step-11').classList.add('hidden');
+            document.getElementById('step-10').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '62.5%';
+        });
+
+        document.getElementById('step11-next').addEventListener('click', function() {
+            if (!document.querySelector('input[name="countertop"]:checked')) {
+                alert('Please select a countertop option.');
+                return;
+            }
+            document.getElementById('step-11').classList.add('hidden');
+            document.getElementById('step-12').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '75%';
+        });
+
+        // Step 12
+        document.getElementById('step12-prev').addEventListener('click', function() {
+            document.getElementById('step-12').classList.add('hidden');
+            document.getElementById('step-11').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '68.75%';
+        });
+
+        document.getElementById('step12-next').addEventListener('click', function() {
+            // Features are optional
+            document.getElementById('step-12').classList.add('hidden');
+            document.getElementById('step-13').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '81.25%';
+        });
+        // Step 13
+        document.getElementById('step13-prev').addEventListener('click', function() {
+            document.getElementById('step-13').classList.add('hidden');
+            document.getElementById('step-12').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '75%';
+        });
+
+        document.getElementById('step13-next').addEventListener('click', function() {
+            if (!document.querySelector('input[name="drywall"]:checked')) {
+                alert('Please select a drywall option.');
+                return;
+            }
+            document.getElementById('step-13').classList.add('hidden');
+            document.getElementById('step-14').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '87.5%';
+        });
+
+        // Step 14
+        document.getElementById('step14-prev').addEventListener('click', function() {
+            document.getElementById('step-14').classList.add('hidden');
+            document.getElementById('step-13').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '81.25%';
+        });
+
+        document.getElementById('step14-next').addEventListener('click', function() {
+            if (!document.querySelector('input[name="painting"]:checked')) {
+                alert('Please select a painting option.');
+                return;
+            }
+            document.getElementById('step-14').classList.add('hidden');
+            document.getElementById('step-15').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '93.75%';
+        });
+
+        // Step 15
+         // Update the step15-next event handler to go to the consultation question
+         document.getElementById('step15-next').addEventListener('click', function() {
+            if (!document.querySelector('input[name="appliances"]:checked')) {
+                alert('Please select an appliances option.');
+                return;
+            }
+            document.getElementById('step-15').classList.add('hidden');
+            document.getElementById('step-16').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '93.75%';
+        });
+
+        // Step 16 (Design Consultation)
+        document.getElementById('step16-prev').addEventListener('click', function() {
+            document.getElementById('step-16').classList.add('hidden');
+            document.getElementById('step-15').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '87.5%';
+        });
+
+        document.getElementById('step16-next').addEventListener('click', function() {
+            if (!document.querySelector('input[name="consultation"]:checked')) {
+                alert('Please select whether you would like a design consultation.');
+                return;
+            }
+            document.getElementById('step-16').classList.add('hidden');
+            document.getElementById('step-17').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '100%';
+        });
+
+        // Step 17 (Final Contact Form)
+        document.getElementById('step17-prev').addEventListener('click', function() {
+            document.getElementById('step-17').classList.add('hidden');
+            document.getElementById('step-16').classList.remove('hidden');
+            document.getElementById('progress-bar').style.width = '93.75%';
+        });
+
+       
+// Form Submission Handler
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission/redirection
+    
+    // Form data will be handled by FormSubmit.co in the background
+    let formData = new FormData(this);
+    
+    // Send the form data to FormSubmit.co in the background
+    fetch(this.action, {
+        method: 'POST',
+        body: formData
+    });
+    
+    // Show the results page immediately
+    document.getElementById('step-17').classList.add('hidden');
+    document.getElementById('results-page').classList.remove('hidden');
+
+});
+    </script>
+</body>
+</html>
