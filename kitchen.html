@@ -515,11 +515,24 @@
                 <input type="text" id="zipcode" name="zipcode" placeholder="Zip Code" required>
             </div>
             
-            <div style="text-align: center; margin-top: 30px; padding-bottom: 20px;">
-                <a href="#" style="color: #007bff; text-decoration: none; margin-right: 15px;">Privacy Policy</a> | 
-                <a href="#" style="color: #007bff; text-decoration: none; margin-left: 15px;">Terms of Service</a>
-            </div>
+             <!-- New "How Did You Hear About Us" Field -->
+                <div class="form-group">
+                    <label for="source">How did you hear about us? *</label>
+                    <select id="source" name="source" required>
+                        <option value="" disabled selected>Please select an option</option>
+                        <option value="Facebook/Instagram">Facebook/Instagram</option>
+                        <option value="Google">Google</option>
+                        <option value="Magazine">Magazine</option>
+                        <option value="Referral">Referral</option>
+                        <option value="Thumbtack">Thumbtack</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
             
+            <div style="text-align: center; margin-top: 30px; padding-bottom: 20px;">
+                <a href="https://wabaysidehomeimprovement.com/privacy-policy" style="color: #007bff; text-decoration: none; margin-right: 15px;">Privacy Policy</a> | 
+                <a href="https://wabaysidehomeimprovement.com/terms-of-service" style="color: #007bff; text-decoration: none; margin-left: 15px;">Terms of Service</a>
+            </div>
             <div class="button-container" style="background-color: transparent; padding: 15px 0;">
                 <button type="button" class="prev-button" id="step17-prev" style="color: #FCD798;">PREV</button>
                 <button type="submit" class="next-button" style="background-color: #FCD798; padding: 12px 30px; color: white; border-radius: 5px;">SUBMIT</button>
