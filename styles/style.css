@@ -222,6 +222,27 @@ body.additions-calculator .background-image-container {
     text-decoration: none;
     margin: 0 15px;
 }
+/* Dropdown styling */
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23888888' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #FCD798; /* Match your theme color */
+    box-shadow: 0 0 0 2px rgba(252, 215, 152, 0.3);
+}
 
 @media (max-width: 600px) {
     .company-name {
