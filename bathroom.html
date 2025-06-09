@@ -518,26 +518,39 @@
         </div>
     </div>
 
-    <!-- Design Consultation Question -->
-    <div class="calculator-card hidden" id="step-16">
-        <div class="calculator-content">
-            <div class="question">Would you like a free design consultation from one of our Designers? *</div>
-            <div class="options">
-                <div class="radio-option">
-                    <input type="radio" id="consultation-yes" name="consultation" value="yes" checked>
-                    <label for="consultation-yes">Yes</label>
-                </div>
-                <div class="radio-option">
-                    <input type="radio" id="consultation-no" name="consultation" value="no">
-                    <label for="consultation-no">No</label>
-                </div>
+     <!-- Timeline Question -->
+<div class="calculator-card hidden" id="step-16">
+    <div class="calculator-content">
+        <div class="question">What is your preferred timeline for this project? *</div>
+        <div class="options">
+            <div class="radio-option">
+                <input type="radio" id="timeline-asap" name="timeline" value="ASAP (Within 1-2 months)">
+                <label for="timeline-asap">ASAP (Within 1-2 months)</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="timeline-3-6" name="timeline" value="3-6 months">
+                <label for="timeline-3-6">3-6 months</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="timeline-6-12" name="timeline" value="6-12 months">
+                <label for="timeline-6-12">6-12 months</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="timeline-next-year" name="timeline" value="Next year">
+                <label for="timeline-next-year">Next year</label>
+            </div>
+            <div class="radio-option">
+                <input type="radio" id="timeline-flexible" name="timeline" value="I'm flexible/Just exploring">
+                <label for="timeline-flexible">I'm flexible/Just exploring</label>
             </div>
         </div>
-        <div class="button-container">
-            <button class="prev-button" id="step16-prev">PREV</button>
-            <button class="next-button" id="step16-next">NEXT</button>
-        </div>
     </div>
+    <div class="button-container">
+        <button class="prev-button" id="step16-prev">PREV</button>
+        <button class="next-button" id="step16-next">NEXT</button>
+    </div>
+</div>
+    
 
  <!-- Contact Form (Final Step) -->
  <div class="calculator-card hidden" id="step-17">
@@ -886,8 +899,8 @@
         });
     
         document.getElementById('step16-next').addEventListener('click', function() {
-            if (!document.querySelector('input[name="consultation"]:checked')) {
-                alert('Please select whether you would like a design consultation.');
+            if (!document.querySelector('input[name="timeline"]:checked')) {
+                alert('Please select your timeline.');
                 return;
             }
             document.getElementById('step-16').classList.add('hidden');
